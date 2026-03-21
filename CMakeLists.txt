@@ -26,4 +26,7 @@ set(TRTLLM_LINK_LIBS
 )
 
 add_executable(infer src/infer.cpp)
+add_executable(bench src/bench.cpp)
+
 target_link_libraries(infer ${TRTLLM_LINK_LIBS})
+target_link_libraries(bench ${TRTLLM_LINK_LIBS})

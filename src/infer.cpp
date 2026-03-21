@@ -48,6 +48,7 @@ int main(int argc, char** argv) {
   ExecutorConfig executor_config(1);
   executor_config.setKvCacheConfig(kv_cache_config);
   executor_config.setParallelConfig(parallel_config);
+  executor_config.setBatchingType(BatchingType::kINFLIGHT);
 
   if (rank == 0) std::cout << "[Rank 0] Loading engine...\n";
   auto executor = Executor(argv[1], ModelType::kDECODER_ONLY, executor_config);
